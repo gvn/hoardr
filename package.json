@@ -1,7 +1,7 @@
 {
   "name": "hoardr",
   "version": "0.1.0",
-  "description": "Download all your favorited images from Tumblr.",
+  "description": "Download all your liked images from Tumblr.",
   "main": "app.js",
   "dependencies": {
     "tumblr.js": "0.0.4"

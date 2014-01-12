@@ -2,4 +2,4 @@ node_modules/
 env.json
 likes.json
 photos.json
-favorites/
+likes/

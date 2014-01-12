@@ -46,6 +46,7 @@ function grabLikes(offset) {
       writeJSON('likes.json', likes);
       writeJSON('photos.json', imageURLs);
 
+      // TODO - Make this a callback instead of hardcoding
       fetchImages();
     }
   });
@@ -56,9 +57,9 @@ function fetchImages() {
     var filename = imageURL.split('/').pop();
 
     // Make sure file doesn't already exist before fetching
-    fs.exists('favorites/' + filename, function (exists) {
+    fs.exists('likes/' + filename, function (exists) {
       if (!exists) {
-        var file = fs.createWriteStream('favorites/' + filename);
+        var file = fs.createWriteStream('likes/' + filename);
 
         http.get(imageURL, function (response) {
           response.pipe(file);
@@ -80,11 +81,11 @@ client.likes(function (err, resp) {
 
   likeCount = resp.liked_count;
 
-  // Number of pages of favorites that must be parsed for the full set
+  // Number of pages of likes that must be parsed for the full set
   // API returns a max of 20 per request
   pageCount = Math.ceil(likeCount / 20);
 
-  console.log('Total favorites: ' + likeCount);
+  console.log('Total likes: ' + likeCount);
   console.log('Page requests necessary: ' + pageCount);
 
   for (var i = 0; i < likeCount; i += 20) {
