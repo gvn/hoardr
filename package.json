@@ -1,6 +1,12 @@
 {
   "name": "hoardr",
-  "version": "0.1.0",
+  "keywords": ["tumblr"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gvn/hoardr"
+  },
+  "bugs": "https://github.com/gvn/hoardr/issues",
+  "version": "v0.1.1",
   "description": "Download all your liked images from Tumblr.",
   "main": "app.js",
   "dependencies": {
